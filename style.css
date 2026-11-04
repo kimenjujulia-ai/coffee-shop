@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=League+Spartan:wght@100..900&family=Miniver&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=League+Spartan:wght@100..900&display=swap');
 
 * {
   margin: 0;
@@ -7,10 +6,15 @@
   box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: "League Spartan", sans-serif;
 }
 
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -30,38 +34,41 @@ body {
   padding: 0 clamp(20px, 6vw, 90px);
 }
 
-/* navbar styling */
+/* navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px clamp(20px, 6vw, 90px);
 }
+
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
+
 .logo-img {
   height: 150px;
   width: auto;
   display: block;
-  align-items: center;
   filter: brightness(0) invert(1);
 }
+
 .logo-text {
   color: #f3e6d0;
   font-size: 35px;
   font-weight: bold;
-  align-items: center;
   letter-spacing: 0.04em;
 }
+
 .nav-menu {
   display: flex;
   gap: 36px;
   list-style: none;
 }
+
 .nav-link {
   color: #f3e6d0;
   text-decoration: none;
@@ -71,33 +78,35 @@ body {
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s, opacity 0.2s;
 }
+
 .nav-link:hover {
   color: #c9a15b;
   border-color: #c9a15b;
   opacity: 1;
 }
-/*hero text */
-.hero-content h1{
+
+/* hero text */
+.hero-content h1 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(52px, 7vw, 108px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.01em;
 }
-.hero-content h1 span{
-  display: block;
-}
-.accent {
-  color: #c9a15b;
-}
-.hero-sub{
+
+.hero-content h1 span { display: block; }
+
+.accent { color: #c9a15b; }
+
+.hero-sub {
   max-width: 440px;
   margin-top: 24px;
   font-size: 1.15rem;
   line-height: 1.6;
   opacity: 0.85;
 }
-.hero-btn{
+
+.hero-btn {
   align-self: flex-start;
   margin-top: 32px;
   padding: 14px 36px;
@@ -106,13 +115,17 @@ body {
   color: #1a1109;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s transform 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
-.hero-btn:hover{
+
+.hero-btn:hover {
   background: #f3e6d0;
   transform: translateY(-2px);
 }
-/* ---------- About ---------- */
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -148,17 +161,19 @@ body {
   opacity: 0.85;
 }
 
-/* temporary plain grid: step 2 turns this into polaroids */
+/* photo album */
 .album {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+
 .polaroid {
   position: relative;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s;
   cursor: pointer;
 }
+
 .polaroid img {
   display: block;
   width: 100%;
@@ -167,31 +182,28 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
 .polaroid figcaption {
   margin-top: 8px;
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
 /* while the mouse is over the album, every photo steps back */
 .album:hover .polaroid {
   transform: scale(0.95);
   opacity: 0.6;
 }
+
 /* the photo under the mouse comes forward (must come AFTER the rule above) */
 .album .polaroid:hover {
   transform: scale(1.06) translateY(-8px);
   opacity: 1;
   z-index: 10;
 }
-@media (prefers-reduced-motion: reduce) {
-  .polaroid { transition: none; }
-  .album:hover .polaroid,
-  .album .polaroid:hover { transform: none; }
-}
+
 /* =========================================================
-   MENU SECTION (poster version)
-   Uses .eyebrow and .accent from style.css, so load this
-   file AFTER style.css
+   MENU (poster version)
    ========================================================= */
 .menu {
   padding: 110px clamp(20px, 6vw, 90px);
@@ -211,7 +223,7 @@ body {
   line-height: 1.05;
 }
 
-/* ---------- the poster ---------- */
+/* the poster */
 .poster {
   position: relative;
   overflow: hidden;
@@ -224,7 +236,7 @@ body {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
-/* one poster layer per drink (built by menu.js), crossfading */
+/* one poster layer per drink (built by the script), crossfading */
 .poster-layer {
   position: absolute;
   inset: 0;
@@ -240,7 +252,7 @@ body {
   transform: scale(1);
 }
 
-/* ---------- the drink PNG, placed with --x --y --w from menu.js ---------- */
+/* the drink PNG: --x and --y are the CENTRE, --w is the width (set by the script) */
 .drink-pos {
   display: none;
   position: absolute;
@@ -253,15 +265,13 @@ body {
   pointer-events: none;
 }
 
-.drink-pos.has {
-  display: block;
-}
+.drink-pos.has { display: block; }
 
+/* keep this at 100%: the size comes from --w, so x and y stay the true centre */
 #drinkImg {
   position: relative;
-  width: 150%;
-  height: 150%;
-  align-items: baseline;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.5));
 }
@@ -318,7 +328,7 @@ body {
   }
 }
 
-/* ---------- price and order ---------- */
+/* price and order */
 .drink-buy {
   display: flex;
   justify-content: center;
@@ -343,7 +353,7 @@ body {
   outline: none;
 }
 
-/* ---------- the buttons and the progress bars ---------- */
+/* the buttons and the progress bars */
 .drink-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -387,7 +397,7 @@ body {
   background: #c9a15b;
 }
 
-/* the bar fills over 5 seconds, then menu.js moves to the next drink */
+/* the bar fills over 5 seconds, then the script moves to the next drink */
 .drink-tab.active i {
   animation: tab-fill 5s linear forwards;
 }
@@ -402,50 +412,32 @@ body {
   animation-play-state: paused;
 }
 
-/* ---------- reduced motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .drink-pos.pop #drinkImg,
-  .drink-pos.out #drinkImg,
-  .drink-pos.pop .burst {
-    animation: none;
-  }
-
-  .drink-tab.active i {
-    animation: none;
-    width: 100%;
-  }
-
-  .poster-layer {
-    transition: opacity 0.3s;
-    transform: none;
-  }
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact {
+  background: #120c07;
+  color: #d4af37;
+  text-align: center;
+  padding: 60px 20px 40px;
 }
-/* contact*/
-.contact{
- background: #1a1a1a;
- color: #d4af37;
- text-align: center;
- padding: 40px 20px; 
+
+.contact-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 240px;
+  width: auto;
 }
-.contact-caption{
+
+.contact-caption {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(40px, 5vw, 68px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 600;
   color: #d4af37;
   margin: 20px;
+}
 
-}
-.footer logo{
-width: 150px;
-height: 150px;
-margin-left: 20px;
-opacity:0.9;
-}
-.copyright{
-  font-size: 12px;
-  color: #777;
-  margin-top: 20px;
-}
 .order-box {
   background-color: #1a1a1a;
   border: 2px solid #d4af37;
@@ -502,4 +494,80 @@ opacity:0.9;
 
 .order-btn:hover {
   background-color: #fff;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .polaroid { transition: none; }
+  .album:hover .polaroid,
+  .album .polaroid:hover { transform: none; }
+
+  .drink-pos.pop #drinkImg,
+  .drink-pos.out #drinkImg,
+  .drink-pos.pop .burst { animation: none; }
+
+  .drink-tab.active i {
+    animation: none;
+    width: 100%;
+  }
+
+  .poster-layer {
+    transition: opacity 0.3s;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   PHONES AND TABLETS (keep these LAST)
+   ========================================================= */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .logo-img { height: 80px; }
+  .logo-text { font-size: 26px; }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 22px;
+  }
+
+  .nav-link { font-size: 18px; }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: 70px 20px;
+  }
+
+  .menu { padding: 70px 20px; }
+}
+
+@media (max-width: 500px) {
+  .album { gap: 10px; }
+
+  .drink-tab {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .menu-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+
+  .order-box { padding: 20px; }
 }

@@ -7,141 +7,152 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="home">
     <nav class="navbar">
-      <a href="#" class="nav-logo">
+      <a href="#home" class="nav-logo">
         <img src="images/designs/logo.png" alt="" class="logo-img">
         <span class="logo-text">COFFEE LOVER</span>
-      </a>  
+      </a>
       <ul class="nav-menu">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
 
     <div class="hero-content">
-    <h1>
-      <span>Fresh Roast</span>
-      <span class="accent">Fresh start</span>
-    </h1>
-    <p class="hero-sub">Small-batch beans, roasted dark and brewed to make a day a little better</p>
-    <a href="#menu" class="hero-btn">Explore the menu</a>  
-  </div>
+      <h1>
+        <span>Fresh Roast</span>
+        <span class="accent">Fresh start</span>
+      </h1>
+      <p class="hero-sub">Small-batch beans, roasted dark and brewed to make a day a little better</p>
+      <a href="#menu" class="hero-btn">Explore the menu</a>
+    </div>
   </header>
 
+  <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
     <div class="about-text">
       <span class="eyebrow">Our story</span>
       <h2>Made slowly<br>
-      <span class="accent">poured with love</span>
+        <span class="accent">poured with love</span>
       </h2>
       <p>We roast small batches of beans and brew every cup by hand. No rush, no shortcuts, just good coffee and a warm place to enjoy it.</p>
       <p>From the first pour to the last sip, every cup is made to make your day a little better.</p>
-  </div>
-  <div class="album">
-    <figure class="polaroid">
-      <img src="images/designs/album/latte-pour.jpg" alt="Barista pouring latte art">
-      <figcaption>Pour with love</figcaption>
-    </figure>
-    <figure class="polaroid">
-      <img src="images/designs/album/beans.jpg" alt="Freshly roasted coffee beans">
-      <figcaption>Roasted fresh</figcaption>
-    </figure>
-    <figure class="polaroid">
-      <img src="images/designs/album/barista.jpg" alt="Barista at work">
-      <figcaption>Made by hand</figcaption>
-    </figure>
-    <figure class="polaroid">
-      <img src="images/designs/album/pastry.jpg" alt="Coffee with a pastry">
-      <figcaption>Sweet pairing</figcaption>
-    </figure>
-  </div>
-  </section>
-  /* menu section*/
- <section class="menu" id="menu">
-  <div class="menu-head">
-    <span class="eyebrow">The menu</span>
-    <h2>Pick your <span class="accent">pour.</span></h2>
-  </div>
- 
-  <!-- the poster (built by menu.js) with the drink PNG on top -->
-  <div class="poster" id="poster">
-    <div class="drink-pos" id="stage">
-      <div class="burst"></div>
-      <img id="drinkImg" src="images/designs/latte.png" alt="Latte">
     </div>
-  </div>
- 
-  <!-- price and order -->
-  <div class="drink-buy">
-    <a class="menu-btn" id="drinkOrder" href="#" target="_blank">
-      Order <span id="drinkName">Latte</span> &middot; <span id="drinkPrice">KSh 250</span>
-    </a>
-  </div>
- 
-  <!-- the buttons with the progress bars -->
-  <div class="drink-tabs">
-    <button class="drink-tab active" type="button"><span>Latte</span><i></i></button>
-    <button class="drink-tab" type="button"><span>Cappuccino</span><i></i></button>
-    <button class="drink-tab" type="button"><span>Espresso</span><i></i></button>
-    <button class="drink-tab" type="button"><span>Iced Coffee</span><i></i></button>
-    <button class="drink-tab" type="button"><span>Pumpkin Spice</span><i></i></button>
-  </div>
-</section>
- 
-<section class="contact" id="contact">
-  <div class="contact-content">
-    <img id="coffee-break.png" src="images/designs/coffee break.png" alt="footer logo">
-    <p class="contact-caption">Get your day activated with brewed coffee  </p>
-    <div class="order-box">
-  <h3>Place Your Coffee Order</h3>
-  <p>Type your order below and send it directly to us via WhatsApp!</p>
-  
-  <div class="order-form">
-    <textarea id="order-message" placeholder="e.g., 2 Cappuccinos, 1 Espresso..." rows="3"></textarea>
-    <button onclick="sendOrderToWhatsApp()" class="order-btn">Send Order on WhatsApp</button>
-  </div>
-</div>
-    <p class="copyright">@ 2026 My headphone store</p>
-  </div>
-</section>
-  <script>
-  /* =========================================================
-   MENU SECTION 
-   ========================================================= */
-var PHONE = "254754 664 822";   // change to your WhatsApp number
 
+    <div class="album">
+      <figure class="polaroid">
+        <img src="images/designs/album/latte-pour.jpg" alt="Barista pouring latte art">
+        <figcaption>Pour with love</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="images/designs/album/beans.jpg" alt="Freshly roasted coffee beans">
+        <figcaption>Roasted fresh</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="images/designs/album/barista.jpg" alt="Barista at work">
+        <figcaption>Made by hand</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="images/designs/album/pastry.jpg" alt="Coffee with a pastry">
+        <figcaption>Sweet pairing</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="menu" id="menu">
+    <div class="menu-head">
+      <span class="eyebrow">The menu</span>
+      <h2>Pick your <span class="accent">pour.</span></h2>
+    </div>
+
+    <!-- the poster (built by the script below) with the drink PNG on top -->
+    <div class="poster" id="poster">
+      <div class="drink-pos" id="stage">
+        <div class="burst"></div>
+        <img id="drinkImg" src="images/designs/latte.png" alt="Latte">
+      </div>
+    </div>
+
+    <!-- price and order -->
+    <div class="drink-buy">
+      <a class="menu-btn" id="drinkOrder" href="#" target="_blank">
+        Order <span id="drinkName">Latte</span> &middot; <span id="drinkPrice">KSh 250</span>
+      </a>
+    </div>
+
+    <!-- the buttons with the progress bars -->
+    <div class="drink-tabs">
+      <button class="drink-tab active" type="button"><span>Latte</span><i></i></button>
+      <button class="drink-tab" type="button"><span>Cappuccino</span><i></i></button>
+      <button class="drink-tab" type="button"><span>Espresso</span><i></i></button>
+      <button class="drink-tab" type="button"><span>Iced Coffee</span><i></i></button>
+      <button class="drink-tab" type="button"><span>Pumpkin Spice</span><i></i></button>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / ORDER ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-content">
+      <img class="contact-logo" src="images/designs/coffee break.png" alt="Coffee Lover">
+      <p class="contact-caption">Get your day activated with brewed coffee</p>
+
+      <div class="order-box">
+        <h3>Place Your Coffee Order</h3>
+        <p>Type your order below and send it directly to us via WhatsApp!</p>
+
+        <div class="order-form">
+          <textarea id="order-message" aria-label="Your order" placeholder="e.g., 2 Cappuccinos, 1 Espresso..." rows="3"></textarea>
+          <button type="button" onclick="sendOrderToWhatsApp()" class="order-btn">Send Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <p class="copyright">&copy; 2026 Coffee Lover</p>
+    </div>
+  </section>
+
+  <script>
+/* =========================================================
+   YOUR WHATSAPP NUMBER: digits only, no spaces, no +
+   One number, used by the menu button and the order form
+   ========================================================= */
+var PHONE = "254745232720";
+
+/* =========================================================
+   MENU SECTION
+   ========================================================= */
 var drinks = [
   { name: "Latte",
     poster: "images/designs/latte.jpg",
     img: "images/designs/latte.png",
-    x: "83%", y: "50%", w: "28%",          // inside the cream arch on the right
+    x: "83%", y: "50%", w: "42%",          // inside the cream arch on the right
     price: "KSh 250" },
 
   { name: "Cappuccino",
     poster: "images/designs/cappuccino.jpg",
     img: "images/designs/cappuccino.png",
-    x: "72%", y: "58%", w: "28%",          // right side (see the note about the COFFEE words)
+    x: "72%", y: "58%", w: "42%",
     price: "KSh 250" },
 
   { name: "Espresso",
     poster: "images/designs/espresso.jpg",
     img: "images/designs/espresso.png",
-    x: "76%", y: "66%", w: "30%",          // the empty dark area under the title
+    x: "76%", y: "66%", w: "40%",          // the empty dark area under the title
     price: "KSh 180" },
 
   { name: "Iced Coffee",
     poster: "images/designs/iced-coffee.jpg",
     img: "images/designs/cold brew.png",
-    x: "58%", y: "52%", w: "32%",          // inside the big diamond
+    x: "58%", y: "52%", w: "48%",          // inside the big diamond
     price: "KSh 280" },
 
   { name: "Pumpkin Spice",
     poster: "images/designs/pumpkin-spice.jpg",
     img: "images/designs/pumkin spice.png",
-    x: "18%", y: "46%", w: "26%",          // inside the cream arch on the left
+    x: "18%", y: "46%", w: "39%",          // inside the cream arch on the left
     price: "KSh 300" }
 ];
 
@@ -190,8 +201,6 @@ function showDrink(n) {
     stage.classList.remove("out");
 
     if (d.img) {
-      // the || values are a safety net: if x, y or w is missing, the drink
-      // lands in the middle of the poster instead of the top-left corner
       stage.style.setProperty("--x", d.x || "50%");
       stage.style.setProperty("--y", d.y || "50%");
       stage.style.setProperty("--w", d.w || "30%");
@@ -218,27 +227,21 @@ document.querySelector(".drink-tabs").addEventListener("animationend", function 
 
 showDrink(0);
 
+/* =========================================================
+   ORDER FORM
+   ========================================================= */
 function sendOrderToWhatsApp() {
-  // Your WhatsApp phone number in international format without the '+' symbol
-  const phoneNumber = "254745232720"; 
-  
-  // Get the text from the textarea
-  const orderText = document.getElementById("order-message").value.trim();
-  
-  // Check if the box is empty before sending
+  var orderText = document.getElementById("order-message").value.trim();
+
   if (orderText === "") {
     alert("Please write your order before sending!");
     return;
   }
-  
-  // Format the message for WhatsApp
-  const fullMessage = "Hello! I would like to place an order: " + orderText;
-  const encodedMessage = encodeURIComponent(fullMessage);
-  
-  // Open WhatsApp with the pre-filled message
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  window.open(whatsappUrl, "_blank");
+
+  var fullMessage = "Hello! I would like to place an order: " + orderText;
+  var url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(fullMessage);
+  window.open(url, "_blank");
 }
-</script>
+  </script>
 </body>
 </html>
