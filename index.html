@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Coffee Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <a href="#" class="nav-logo">
+        <img src="images/designs/logo.png" alt="" class="logo-img">
+        <span class="logo-text">COFFEE LOVER</span>
+      </a>  
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+    <h1>
+      <span>Fresh Roast</span>
+      <span class="accent">Fresh start</span>
+    </h1>
+    <p class="hero-sub">Small-batch beans, roasted dark and brewed to make a day a little better</p>
+    <a href="#menu" class="hero-btn">Explore the menu</a>  
+  </div>
+  </header>
+
+  <section class="about" id="about">
+    <div class="about-text">
+      <span class="eyebrow">Our story</span>
+      <h2>Made slowly<br>
+      <span class="accent">poured with love</span>
+      </h2>
+      <p>We roast small batches of beans and brew every cup by hand. No rush, no shortcuts, just good coffee and a warm place to enjoy it.</p>
+      <p>From the first pour to the last sip, every cup is made to make your day a little better.</p>
+  </div>
+  <div class="album">
+    <figure class="polaroid">
+      <img src="images/designs/album/latte-pour.jpg" alt="Barista pouring latte art">
+      <figcaption>Pour with love</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="images/designs/album/beans.jpg" alt="Freshly roasted coffee beans">
+      <figcaption>Roasted fresh</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="images/designs/album/barista.jpg" alt="Barista at work">
+      <figcaption>Made by hand</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="images/designs/album/pastry.jpg" alt="Coffee with a pastry">
+      <figcaption>Sweet pairing</figcaption>
+    </figure>
+  </div>
+  </section>
+  /* menu section*/
+ <section class="menu" id="menu">
+  <div class="menu-head">
+    <span class="eyebrow">The menu</span>
+    <h2>Pick your <span class="accent">pour.</span></h2>
+  </div>
+ 
+  <!-- the poster (built by menu.js) with the drink PNG on top -->
+  <div class="poster" id="poster">
+    <div class="drink-pos" id="stage">
+      <div class="burst"></div>
+      <img id="drinkImg" src="images/designs/latte.png" alt="Latte">
+    </div>
+  </div>
+ 
+  <!-- price and order -->
+  <div class="drink-buy">
+    <a class="menu-btn" id="drinkOrder" href="#" target="_blank">
+      Order <span id="drinkName">Latte</span> &middot; <span id="drinkPrice">KSh 250</span>
+    </a>
+  </div>
+ 
+  <!-- the buttons with the progress bars -->
+  <div class="drink-tabs">
+    <button class="drink-tab active" type="button"><span>Latte</span><i></i></button>
+    <button class="drink-tab" type="button"><span>Cappuccino</span><i></i></button>
+    <button class="drink-tab" type="button"><span>Espresso</span><i></i></button>
+    <button class="drink-tab" type="button"><span>Iced Coffee</span><i></i></button>
+    <button class="drink-tab" type="button"><span>Pumpkin Spice</span><i></i></button>
+  </div>
+</section>
+ 
+<section class="contact" id="contact">
+  <div class="contact-content">
+    <img id="coffee-break.png" src="images/designs/coffee break.png" alt="footer logo">
+    <p class="contact-caption">Get your day activated with brewed coffee  </p>
+    <div class="order-box">
+  <h3>Place Your Coffee Order</h3>
+  <p>Type your order below and send it directly to us via WhatsApp!</p>
+  
+  <div class="order-form">
+    <textarea id="order-message" placeholder="e.g., 2 Cappuccinos, 1 Espresso..." rows="3"></textarea>
+    <button onclick="sendOrderToWhatsApp()" class="order-btn">Send Order on WhatsApp</button>
+  </div>
+</div>
+    <p class="copyright">@ 2026 My headphone store</p>
+  </div>
+</section>
+  <script>
+  /* =========================================================
+   MENU SECTION 
+   ========================================================= */
+var PHONE = "254754 664 822";   // change to your WhatsApp number
+
+var drinks = [
+  { name: "Latte",
+    poster: "images/designs/latte.jpg",
+    img: "images/designs/latte.png",
+    x: "83%", y: "50%", w: "28%",          // inside the cream arch on the right
+    price: "KSh 250" },
+
+  { name: "Cappuccino",
+    poster: "images/designs/cappuccino.jpg",
+    img: "images/designs/cappuccino.png",
+    x: "72%", y: "58%", w: "28%",          // right side (see the note about the COFFEE words)
+    price: "KSh 250" },
+
+  { name: "Espresso",
+    poster: "images/designs/espresso.jpg",
+    img: "images/designs/espresso.png",
+    x: "76%", y: "66%", w: "30%",          // the empty dark area under the title
+    price: "KSh 180" },
+
+  { name: "Iced Coffee",
+    poster: "images/designs/iced-coffee.jpg",
+    img: "images/designs/cold brew.png",
+    x: "58%", y: "52%", w: "32%",          // inside the big diamond
+    price: "KSh 280" },
+
+  { name: "Pumpkin Spice",
+    poster: "images/designs/pumpkin-spice.jpg",
+    img: "images/designs/pumkin spice.png",
+    x: "18%", y: "46%", w: "26%",          // inside the cream arch on the left
+    price: "KSh 300" }
+];
+
+/* ---------- grab the elements ---------- */
+var poster = document.getElementById("poster");
+var stage = document.getElementById("stage");
+var drinkImg = document.getElementById("drinkImg");
+var drinkName = document.getElementById("drinkName");
+var drinkPrice = document.getElementById("drinkPrice");
+var drinkOrder = document.getElementById("drinkOrder");
+var tabs = document.querySelectorAll(".drink-tab");
+var current = -1;
+
+/* ---------- build one poster layer per drink, and preload ---------- */
+var layers = drinks.map(function (d) {
+  new Image().src = d.poster;
+  if (d.img) new Image().src = d.img;
+
+  var layer = document.createElement("div");
+  layer.className = "poster-layer";
+  layer.style.backgroundImage = 'url("' + d.poster + '")';
+  poster.insertBefore(layer, stage);      // layers sit underneath the PNG
+  return layer;
+});
+
+/* ---------- switch to a drink ---------- */
+function showDrink(n) {
+  if (n === current) return;              // already showing it
+  current = n;
+  var d = drinks[n];
+
+  tabs.forEach(function (t, i) { t.classList.toggle("active", i === n); });
+  layers.forEach(function (l, i) { l.classList.toggle("on", i === n); });   // crossfade
+
+  stage.classList.remove("pop");
+  if (stage.classList.contains("has")) stage.classList.add("out");   // old drink drops away
+
+  setTimeout(function () {
+    if (current !== n) return;            // a newer click took over
+
+    drinkName.textContent = d.name;
+    drinkPrice.textContent = d.price;
+    drinkOrder.href = "https://wa.me/" + PHONE + "?text=" +
+      encodeURIComponent("Hi, I would like a " + d.name);
+
+    stage.classList.remove("out");
+
+    if (d.img) {
+      // the || values are a safety net: if x, y or w is missing, the drink
+      // lands in the middle of the poster instead of the top-left corner
+      stage.style.setProperty("--x", d.x || "50%");
+      stage.style.setProperty("--y", d.y || "50%");
+      stage.style.setProperty("--w", d.w || "30%");
+      drinkImg.src = d.img;
+      drinkImg.alt = d.name;
+      stage.classList.add("has");
+      void stage.offsetWidth;             // forces the animation to restart
+      stage.classList.add("pop");         // new drink pops in
+    } else {
+      stage.classList.remove("has");      // this poster stands on its own
+    }
+  }, 300);
+}
+
+/* ---------- clicking a button jumps to that drink ---------- */
+tabs.forEach(function (t, i) {
+  t.addEventListener("click", function () { showDrink(i); });
+});
+
+/* ---------- the cycle: when a progress bar finishes, go to the next ---------- */
+document.querySelector(".drink-tabs").addEventListener("animationend", function (e) {
+  if (e.animationName === "tab-fill") showDrink((current + 1) % drinks.length);
+});
+
+showDrink(0);
+
+function sendOrderToWhatsApp() {
+  // Your WhatsApp phone number in international format without the '+' symbol
+  const phoneNumber = "254745232720"; 
+  
+  // Get the text from the textarea
+  const orderText = document.getElementById("order-message").value.trim();
+  
+  // Check if the box is empty before sending
+  if (orderText === "") {
+    alert("Please write your order before sending!");
+    return;
+  }
+  
+  // Format the message for WhatsApp
+  const fullMessage = "Hello! I would like to place an order: " + orderText;
+  const encodedMessage = encodeURIComponent(fullMessage);
+  
+  // Open WhatsApp with the pre-filled message
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, "_blank");
+}
+</script>
+</body>
+</html>
